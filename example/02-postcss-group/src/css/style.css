@@ -1,0 +1,12 @@
+div{width:200px;height: 200px;}
+.img1{background: url(../img/01-sprite1.png) no-repeat 0 0;width:154px;height: 106px;}
+.img2{background: url(../img/02-sprite1.png) no-repeat 0 0;width:154px;height: 106px;}
+.img3{background: url(../img/03-sprite1.png) no-repeat 0 0;width:207px;height:158px;}
+.img4{background: url(../img/04-sprite1.png) no-repeat 0 0;width:210px;height: 158px;}
+.img5{background: url(../img/05-sprite1.png) no-repeat 0 0;width:156px;height: 109px;}
+.img6{background: url(../img/06-sprite1.png) no-repeat 0 0;width:159px;height:113px;}
+.img7{background: url(../img/07-sprite2.png) no-repeat 0 0;width:205px;height: 118px;}
+.img8{background: url(../img/08-sprite2.png) no-repeat 0 0;width:204px;height: 106px;}
+.img9{background: url(../img/09-sprite2.png) no-repeat 0 0;width:215px;height: 106px;}
+.img10{background: url(../img/10-sprite2.png) no-repeat 0 0;width:192px;height: 120px;}
+.img11{background: url(../img/11-sprite2.png) no-repeat 0 0;width:185px;height: 128px;}

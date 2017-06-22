@@ -1,0 +1,27 @@
+$sprite1 : sprite-map("sprite1/*.png",$spacing : 10px , $layout : 'vertical');
+$sprite2 : sprite-map("sprite2/*.png",$spacing : 10px , $layout : 'vertical');
+
+@function pxToRem ($value){
+    $value : $value / ($value * 0 + 1);  //去单位px
+    @return $value/(750px/16px/1rem);
+}
+@mixin spritesMixin($name,$sprites){
+    $iconPath:sprite-file($sprites,$name);
+    $iconWidth:image-width($iconPath);
+    $iconHeight:image-height($iconPath);
+    $iconPosX : nth(sprite-position($sprites,$name),1);
+    $iconPosY : nth(sprite-position($sprites,$name),2);
+    background-repeat:no-repeat;
+    background-image:sprite-url($sprites);
+    width:pxToRem($iconWidth);
+    height: pxToRem($iconHeight);
+    background:pxToRem($iconPosX) pxToRem($iconPosY);
+}
+
+.a{
+    @include spritesMixin(a,$sprite1);
+}
+
+.b{
+    @include spritesMixin(b,$sprite1);
+}

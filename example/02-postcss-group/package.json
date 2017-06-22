@@ -1,0 +1,31 @@
+{
+  "name": "createspritesheet",
+  "version": "1.0.0",
+  "description": "list ways to create spritesheet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "keywords": [
+    "spritesheet",
+    "postcss",
+    "compass"
+  ],
+  "author": "曾洁仪",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.28.0",
+    "image-webpack-loader": "^3.3.1",
+    "postcss-loader": "^2.0.5",
+    "postcss-sprites": "^4.2.1",
+    "style-loader": "^0.18.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.6.1"
+  }
+}

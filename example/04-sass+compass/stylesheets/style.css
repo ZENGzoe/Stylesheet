@@ -1,0 +1,17 @@
+/* line 22, ../sass/style.scss */
+.a {
+  background-repeat: no-repeat;
+  background-image: url('/images/sprite1-s113d809f9f.png');
+  width: 3.28533rem;
+  height: 2.26133rem;
+  background: 0rem 0rem;
+}
+
+/* line 26, ../sass/style.scss */
+.b {
+  background-repeat: no-repeat;
+  background-image: url('/images/sprite1-s113d809f9f.png');
+  width: 3.28533rem;
+  height: 2.26133rem;
+  background: 0rem -2.47467rem;
+}
