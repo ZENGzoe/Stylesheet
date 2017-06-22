@@ -3,7 +3,7 @@
 ## 前言
 
 在项目中，有时候需要用到很多小的图片，那么页面访问过程中就需要一次一次地向服务器很多的这样小的图片，严重影响到页面的性能。我们可以将多个小的图片合成一张图片，这样的话页面会只请求一次，从而优化我们的性能。这样的图片叫做CSS Sprite,也叫雪碧图。
-![](2017-05-25-sprite雪碧图生成方法/01.png)
+![](http://zengzoe.github.io/2017/05/25/sprite%E9%9B%AA%E7%A2%A7%E5%9B%BE%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/01.png)
 
 ## 实现
 
@@ -109,27 +109,27 @@ webpack-dev-server
 
 图片：
 
-![](2017-05-25-sprite雪碧图生成方法/02.png)
+![](http://zengzoe.github.io/2017/05/25/sprite%E9%9B%AA%E7%A2%A7%E5%9B%BE%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/02.png)
 
 CSS：
 
-![](2017-05-25-sprite雪碧图生成方法/03.png)
+![](http://zengzoe.github.io/2017/05/25/sprite%E9%9B%AA%E7%A2%A7%E5%9B%BE%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/03.png)
 
 ** After: **
 
 图片：
 
-![](2017-05-25-sprite雪碧图生成方法/04.png)
+![](http://zengzoe.github.io/2017/05/25/sprite%E9%9B%AA%E7%A2%A7%E5%9B%BE%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/04.png)
 
 CSS：
 
-![](2017-05-25-sprite雪碧图生成方法/05.png)
+![](http://zengzoe.github.io/2017/05/25/sprite%E9%9B%AA%E7%A2%A7%E5%9B%BE%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/05.png)
 
 ** 5.添加分组 **
 
 如果图片太多，可将图片合成多个雪碧图，这时需要根据分组修改图片名称。
 比如，当我需要将以上的11张图片合成两张雪碧图`sprite1.png`和`sprite2.png`，则需要将图片名称改为包含sprite1或sprite2的新名称，包含sprite1或sprite2名称的图片合并到`sprite1.png`或`sprite2.png`。如下：
-![](2017-05-25-sprite雪碧图生成方法/06.png)
+![](http://zengzoe.github.io/2017/05/25/sprite%E9%9B%AA%E7%A2%A7%E5%9B%BE%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/06.png)
 
 并修改`postcss.config.js`如下：
 ```
@@ -160,7 +160,7 @@ module.exports = {
 使用`groupBy`来配置我们的分组。
 
 最终图片合成如下：
-![](2017-05-25-sprite雪碧图生成方法/07.png)
+![](http://zengzoe.github.io/2017/05/25/sprite%E9%9B%AA%E7%A2%A7%E5%9B%BE%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/07.png)
 
 ** 6.修改图片单位 **
 
@@ -214,7 +214,7 @@ module.exports = {
 ```
 使用`hooks.onUpdateRule`来重写输出的图片样式。换算公式可根据自己的需求修改。
 最终CSS结果如下：
-![](2017-05-25-sprite雪碧图生成方法/08.png)
+![](http://zengzoe.github.io/2017/05/25/sprite%E9%9B%AA%E7%A2%A7%E5%9B%BE%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/08.png)
 
 ### 方法二：Composs+Sass
 
@@ -229,7 +229,7 @@ $sprite1 : sprite-map("sprite1/*.png",$spacing : 10px , $layout : 'vertical');
 $sprite2 : sprite-map("sprite2/*.png",$spacing : 10px , $layout : 'vertical');
 ```
 声明两个雪碧图分别为`$sprite1`和`$sprite2`,`sprite-map`第一个参数为`config.rb`配置文件中`images_dir`下雪碧图集的地址，$spacing为图片间隔，默认为0。`$layout`为图片的排列方式。有四种排列方式：`vertical`、`horizontal`、`diagonal`、`smart`。主要分别如下：
-![](2017-05-25-sprite雪碧图生成方法/09.jpg)
+![](http://zengzoe.github.io/2017/05/25/sprite%E9%9B%AA%E7%A2%A7%E5%9B%BE%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/09.jpg)
 
 ** 2.完成style.scss **
 
@@ -275,7 +275,7 @@ $sprite2 : sprite-map("sprite2/*.png",$spacing : 10px , $layout : 'vertical');
 在每个需要雪碧图的位置上直接引入`@include spritesMixin($name,$sprites)`即可，`$name`为该图片的名称，`$sprites`为声明的雪碧图。
 
 转化后的`style.css`:
-![](2017-05-25-sprite雪碧图生成方法/10.png)
+![](http://zengzoe.github.io/2017/05/25/sprite%E9%9B%AA%E7%A2%A7%E5%9B%BE%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/10.png)
 
 如果想要更简单的自动生成，只需要改为简单的几行：
 ```
